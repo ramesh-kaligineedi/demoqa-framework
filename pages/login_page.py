@@ -17,8 +17,13 @@ class LoginPage:
         self.driver.find_element(*self.username).send_keys(users)
     def PASW(self,paswd):
         self.driver.find_element(*self.password).send_keys(paswd)
+    # def loginButton(self):
+    #     self.driver.find_element(*self.login).click()  
     def loginButton(self):
-        self.driver.find_element(*self.login).click()        
+      element = self.driver.find_element(*self.login)
+      self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+      self.driver.execute_script("arguments[0].click();", element)
+
     def get_error_message(self):
         return WebDriverWait(self.driver, 10).until(
           EC.visibility_of_element_located(self.error_msg)
