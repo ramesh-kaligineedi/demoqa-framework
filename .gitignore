@@ -2,8 +2,4 @@ __pycache__/
 .pytest_cache/
 *.pyc
 allure-results/
-Reports/practice/
-
-/practice/
-
 Reports/
